@@ -7,9 +7,6 @@ var score = 0;
 var wins = 0;
 var losses = 0;
 
-// Put 0 score on screen
-$("scoreBoxNumber").html(score);
-
 // Pick random target number
 targetNumber = Math.floor((Math.random() * 120) + 19);
 console.log(targetNumber);
@@ -49,6 +46,7 @@ function reset() {
 
     // Reset score
     score = 0;
+    $("#scoreBoxNumber").html(score);
 
     // Randomize crystal values
     var i;
