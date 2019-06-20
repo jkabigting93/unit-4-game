@@ -1,6 +1,10 @@
 // Define variables 
+var targetNumber;
 
 // Pick random target number
+targetNumber = Math.floor((Math.random() * 120) + 19);
+console.log(targetNumber);
+$("#randomNumberBox").html(targetNumber);
 
 // Assign random variables to crystals
 
