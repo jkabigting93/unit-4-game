@@ -1,6 +1,7 @@
 // Define variables 
 var targetNumber;
 var crystals = ["c1", "c2", "c3", "c4"]
+var score = 0;
 
 
 // Pick random target number
@@ -9,7 +10,6 @@ console.log(targetNumber);
 $("#randomNumberBox").html(targetNumber);
 
 // Assign random variables to crystals
-
 var i;
 for (i = 0; i < crystals.length; i++) {
     crystals[i] = Math.floor((Math.random() * 12) + 1);
@@ -17,6 +17,10 @@ for (i = 0; i < crystals.length; i++) {
 }
 
 // Click listeners on crystals
+$("#crystal1").click(function addC1() {
+    score += crystals[1];
+    $("#scoreBoxNumber").html(score);
+})
 
 // On click, add crystal value to current score
 
