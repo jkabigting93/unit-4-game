@@ -1,3 +1,5 @@
+$( document ).ready(function() {
+
 // Define variables 
 var targetNumber;
 var crystals = ["c0", "c1", "c2", "c3"]
@@ -39,9 +41,6 @@ $("#crystal3").click(function addC3() {
     $("#scoreBoxNumber").html(score);
 })
 
-// Call game function
-checkScore ()
-
 // Define game reset function
 function reset() {
 
@@ -63,29 +62,42 @@ function reset() {
 
 // Check if new score exceeds target value
 function checkScore() {
+
+    // Get integer values
+    var scoreInt = parseInt(score);
+    var targetNumberInt = parseInt(targetNumber);
+
     // IF equal, WIN
-    if (score === targetNumber) {
+    if (scoreInt === targetNumberInt) {
         wins += 1;
         alert("You Win!");
         console.log(wins);
 
         // IF win, add to counter
-        $("#wins").html("Wins: " + wins);
+        $("#wins").text("Wins: " + wins);
 
         // THEN reset
         reset();
     }
 
-    // ELSE if new score > target value, LOSE
-    if (score > targetNumber) {
+    // IF score exceeds target, LOSE
+    if (scoreInt > targetNumberInt) {
         losses += 1;
         alert("You Lose!");
         console.log(losses);
 
         // IF loss, add to counter
-        $("#losses").html("Losses: " + losses);
+        $("#losses").text("Losses: " + losses);
 
         // THEN reset
         reset();
     }
 }
+
+// Call game function infinitely
+setInterval(checkScore, 1000);
+
+// Run game function
+checkScore() 
+
+})
