@@ -48,12 +48,28 @@ h1 {
     padding: 33px 50px 33px 50px
 }
 
-crystalBox {
+#crystalBox {
     clear: left;
 }
 
 img {
     width: 200px;
     height: 200px;
-    clear: left;
+    margin-left: 10px;
+}
+
+#scoreText {
+    background-color: green;
+    color: white;
+    width: 325px;
+    padding: 10px 5px 10px 5px;
+}
+
+#scoreBoxNumber {
+    background-color: green;
+    color: white;
+    width: 325px;
+    padding: 10px 5px 10px 5px;
+    height: 125px;
+    margin-top: 20px;
 }
