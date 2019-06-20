@@ -1,5 +1,7 @@
 // Define variables 
 var targetNumber;
+var crystals = ["c1", "c2", "c3", "c4"]
+
 
 // Pick random target number
 targetNumber = Math.floor((Math.random() * 120) + 19);
@@ -7,6 +9,12 @@ console.log(targetNumber);
 $("#randomNumberBox").html(targetNumber);
 
 // Assign random variables to crystals
+
+var i;
+for (i = 0; i < crystals.length; i++) {
+    crystals[i] = Math.floor((Math.random() * 12) + 1);
+    console.log(crystals[i]);
+}
 
 // Click listeners on crystals
 
