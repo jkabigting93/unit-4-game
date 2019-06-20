@@ -2,7 +2,8 @@
 var targetNumber;
 var crystals = ["c0", "c1", "c2", "c3"]
 var score = 0;
-
+var wins = 0;
+var losses = 0;
 
 // Pick random target number
 targetNumber = Math.floor((Math.random() * 120) + 19);
@@ -38,24 +39,53 @@ $("#crystal3").click(function addC3() {
     $("#scoreBoxNumber").html(score);
 })
 
+// Call game function
+checkScore ()
+
+// Define game reset function
+function reset() {
+
+    // Reset score
+    score = 0;
+
+    // Randomize crystal values
+    var i;
+    for (i = 0; i < crystals.length; i++) {
+        crystals[i] = Math.floor((Math.random() * 12) + 1);
+        console.log(crystals[i]);
+    }
+
+    //Randomize target value
+    targetNumber = Math.floor((Math.random() * 120) + 19);
+    console.log(targetNumber);
+    $("#randomNumberBox").html(targetNumber);
+}
+
 // Check if new score exceeds target value
+function checkScore() {
+    // IF equal, WIN
+    if (score === targetNumber) {
+        wins += 1;
+        alert("You Win!");
+        console.log(wins);
 
-// IF equal, WIN
+        // IF win, add to counter
+        $("#wins").html("Wins: " + wins);
 
-// ELSE if new score > target value, LOSE
+        // THEN reset
+        reset();
+    }
 
-// ELSE if new score < target value, keep playing
+    // ELSE if new score > target value, LOSE
+    if (score > targetNumber) {
+        losses += 1;
+        alert("You Lose!");
+        console.log(losses);
 
-// IF win, add to counter
+        // IF loss, add to counter
+        $("#losses").html("Losses: " + losses);
 
-// THEN reset game
-
-// IF loss, add to counter
-
-// THEN reset game
-
-// IF game reset, set score to zero
-
-// THEN randomize crystal values
-
-// THEN randomize target value
+        // THEN reset
+        reset();
+    }
+}
