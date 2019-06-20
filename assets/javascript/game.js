@@ -1,6 +1,6 @@
 // Define variables 
 var targetNumber;
-var crystals = ["c1", "c2", "c3", "c4"]
+var crystals = ["c0", "c1", "c2", "c3"]
 var score = 0;
 
 
@@ -17,12 +17,26 @@ for (i = 0; i < crystals.length; i++) {
 }
 
 // Click listeners on crystals
+// On click, add crystal value to current score
+$("#crystal0").click(function addC0() {
+    score += crystals[0];
+    $("#scoreBoxNumber").html(score);
+})
+
 $("#crystal1").click(function addC1() {
     score += crystals[1];
     $("#scoreBoxNumber").html(score);
 })
 
-// On click, add crystal value to current score
+$("#crystal2").click(function addC2() {
+    score += crystals[2];
+    $("#scoreBoxNumber").html(score);
+})
+
+$("#crystal3").click(function addC3() {
+    score += crystals[3];
+    $("#scoreBoxNumber").html(score);
+})
 
 // Check if new score exceeds target value
 
