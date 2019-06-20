@@ -1,5 +1,5 @@
 body {
-    background-image: url(file:///C:/Users/thegh/Coding-Homework/Assignment4/unit-4-game/assets/images/background.jpg);
+    background-image: url("../images/background.jpg");
     font-family: Georgia, serif;;
     margin: 20px;
     font-size: 20px;
